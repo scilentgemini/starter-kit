@@ -30,7 +30,7 @@
 
 
 <body id="top">
-    
+
     <!-- preloader
     ================================================== -->
     <div id="preloader">
@@ -41,15 +41,20 @@
         </div>
     </div>
 
-<header class="s-header">
+    <header class="s-header">
 
         <div class="header-logo">
             <a class="site-logo" href="index.html">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Homepage">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Homepage">
             </a>
         </div> <!-- end header-logo -->
 
-        <a class="header-menu-text" href="#0">Menu</a>
+        <div class="header-menu-text">
+            <?php wp_nav_menu( array(
+                'theme_location' => 'Header Menu',
+                'menu_class'     => 'header-menu-text'
+            ) ) ?>
+        </div>
 
         <nav class="header-nav">
 
@@ -58,17 +63,17 @@
             <h3>Navigate to</h3>
 
             <div class="header-nav__content">
-                
+
                 <ul class="header-nav__list">
-                    <li><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                    <li><a class="smoothscroll" href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll" href="#about" title="about">About</a></li>
+                    <li><a class="smoothscroll" href="#services" title="services">Services</a></li>
+                    <li><a class="smoothscroll" href="#works" title="works">Works</a></li>
+                    <li><a class="smoothscroll" href="#contact" title="contact">Contact</a></li>
                 </ul>
-    
+
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
-    
+
                 <ul class="header-nav__social">
                     <li>
                         <a href="#0"><i class="fab fa-facebook"></i></a>

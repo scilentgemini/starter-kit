@@ -1961,6 +1961,92 @@ body.menu-is-open {
 }
 .header-menu-text:hover { color: #793ea5; }
 
+/* Support WP-generated menu when the UL uses the same class inside the wrapper.
+   Match nested structures like:
+   <div class="header-menu-text"> <div class="..."> <ul class="header-menu-text">...</ul>
+*/
+.header-menu-text ul.header-menu-text {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.header-menu-text ul.header-menu-text li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.header-menu-text ul.header-menu-text li:first-child {
+  margin-left: 0;
+}
+
+.header-menu-text ul.header-menu-text li a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  color: #FFFFFF;
+  line-height: 45px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.header-menu-text ul.header-menu-text li a:hover {
+  color: #793ea5;
+}
+
+/* Style WP output when the UL has no class (common wp_nav_menu output) */
+.header-menu-text ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3rem;
+}
+
+.header-menu-text ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.header-menu-text ul li a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  color: #FFFFFF;
+  line-height: 45px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  display: inline-block;
+}
+
+.header-menu-text ul li a:hover {
+  color: #793ea5;
+}
+
+/* Stack vertically on small screens to preserve space */
+@media only screen and (max-width:800px) {
+  .header-menu-text ul {
+    display: block;
+    text-align: right;
+  }
+  .header-menu-text ul li {
+    display: block;
+    margin: .8rem 0;
+  }
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * header
